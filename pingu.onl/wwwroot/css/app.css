@@ -56,6 +56,8 @@ body::before {
     align-items: center;
     flex-wrap: wrap;
     z-index: 1;
+    max-height: 99%;
+    top: -50px;
 }
 
     .glasscontainer .glasscard {
@@ -192,12 +194,16 @@ body::before {
     color: rgba(255, 255, 0, 1);
 }
 
-@media only screen and (min-width: 600px) {
-    .table {
-        font-size: 10px;
+@media only screen and (max-width: 600px) {
+    .table td, table th {
+        font-size: 19px;
     }
 }
-
+@media only screen and (min-width: 600px) {
+    body {
+        overflow: hidden;
+    }
+}
     @keyframes rolling {
         0% {
             
@@ -656,13 +662,17 @@ a, .btn-link {
         border-color: rgba(255, 255, 255, .2) !important;
     }
 .checkboxtext {
-    display: flex;
+    display: inline-block;
     position: relative;
-    
+    top: -100px;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 .bTTn {
-
-    display: flex;
+    top: -100px;
+    text-align: left;
+    top: -100px;
     position: relative;
     display: inline-block;
     width: 60px;
