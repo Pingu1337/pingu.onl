@@ -1,8 +1,22 @@
 ﻿@page "/wowstockboard"
+@using System.Text.RegularExpressions
+@using System.Collections
+@using System.Collections.Immutable
 @inject HttpClient Http
-<h1>World of Warcraft Stock Board</h1>
+@inject NavigationManager NavigationManager;
 
-<p>Live stock board prices from the server Tarren Mill (EU)</p>
+<div class="text-center">
+    <h1>World of Warcraft Stock Board</h1>
+
+    <p>Live stock board prices from the server Tarren Mill (EU)</p>
+</div>
+
+<label class="bTTn">
+    <input type="checkbox" checked @onclick="Stopanimation">
+    <span class="slider round"></span>
+</label>
+<a class=" checkboxtext">Toggle auto scrolling</a>
+
 
 @if (databasedata == null)
 {
@@ -10,31 +24,135 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>MinBuyout</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var data in databasedata)
-            {
-                <tr>
-                    <td>@data.Name</td>
-                    <td>@data.MinBuyout</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    var databasecheck = databasedata.Zip(storedData, (n, s) => new { New = n, Stored = s });
+
+    <div class="glasscontainer">
+        <div class="bgframe">
+            <div class="topFrame">
+                <h1>Item Name</h1>
+                <h1>MinBuyout</h1>
+            </div>
+
+        </div>
+        <div class="glasscard">
+            <div class="glasscontent2">
+                <h1 class="glassh1">StockBoard</h1>
+                <div class="glasscontent">
+                    <table class="table">
+                        <thead>
+                            <tr class="glassh3">
+                                <!--<th>Name</th>
+                                    <th>MinBuyout</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var sn in databasecheck)
+                            {
+
+
+                                valueToCheck = sn.New.MinBuyout;
+                                if (valueToCheck == null)
+                                {
+                                    valueToCheck = "0";
+                                }
+                                value = Regex.Match(valueToCheck, @"\d+").Value;
+                                newval = Int32.Parse(value);
+
+                                storedname = sn.Stored.Name;
+                                storedprice = sn.Stored.MinBuyout;
+                                if (storedprice == null)
+                                {
+                                    storedprice = "0";
+                                }
+
+                                storedvalue = Regex.Match(storedprice, @"\d+").Value;
+                                storedval = Int32.Parse(storedvalue);
+
+                                i++;
+                                animationclass = ("animationclass" + i);
+
+                                if (newval > storedval)
+                                {
+                                    stockchange = "stockup";
+                                    <tr class="@animationclass">
+                                        <td class="stockup">@sn.New.Name</td>
+                                        <td class="stockup">@sn.New.MinBuyout</td>
+                                    </tr>
+
+
+                                }
+                                if (storedval > newval)
+                                {
+                                    stockchange = "stockdown";
+                                    <tr class="@animationclass">
+                                        <td class="stockdown">@sn.New.Name</td>
+                                        <td class="stockdown">@sn.New.MinBuyout</td>
+                                    </tr>
+                                }
+                                if (newval == storedval)
+                                {
+                                    stockchange = "stocknochange";
+                                    <tr class="@animationclass">
+                                        <td class="stocknochange">@sn.New.Name</td>
+                                        <td class="stocknochange">@sn.New.MinBuyout</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="glassscreen"></div>
+    </div>
+
 }
 
 @code {
+    string animationclass;
+    int i = 0;
+    string value;
+    string storedvalue;
+    string valueToCheck = "000";
+    int newval;
+    int storedval;
+    string stockchange = "stocknochange";
     private FetchedData[] databasedata;
+    private FetchedData[] storedData;
+    private FetchData[] datacheck;
+    string storedname;
+    string storedprice;
+    bool clicked = false;
 
-    protected override async Task OnInitializedAsync()
+    private void Stopanimation()
+
     {
+
+        if (clicked)
+        {
+            ForceLoad();
+            clicked = false;
+        }
+        else if (!clicked)
+        {
+            clicked = true;
+            animationclass = "";
+        }
+
+
+    }
+    protected override async Task OnInitializedAsync()
+
+    {
+        storedData = await Http.GetFromJsonAsync<FetchedData[]>("database/StoredDatabaseData.json");
         databasedata = await Http.GetFromJsonAsync<FetchedData[]>("database/DatabaseData.json");
+
+    }
+
+    private void ForceLoad()
+    {
+        NavigationManager.NavigateTo("wowstockboard", true);
     }
 
     public class FetchedData
@@ -43,6 +161,7 @@ else
         public string Name { get; set; }
 
         public string MinBuyout { get; set; }
+
 
     }
 

@@ -1,11 +1,11 @@
 [
   {
     "Name": "heavy callous hide ",
-    "MinBuyout": "215g"
+    "MinBuyout": "200g"
   },
   {
     "Name": "callous hide ",
-    "MinBuyout": "21g"
+    "MinBuyout": "25g"
   },
   {
     "Name": "heavy desolate leather ",
@@ -13,38 +13,38 @@
   },
   {
     "Name": "desolate leather ",
-    "MinBuyout": "6g"
+    "MinBuyout": "55g"
   },
   {
     "Name": "spectral flask of power ",
-    "MinBuyout": "505g"
+    "MinBuyout": "999g"
   },
   {
     "Name": "tome of the still mind ",
-    "MinBuyout": "400g"
+    "MinBuyout": "120g"
+  },
+{
+    "Name": "Shadowcore Oil ",
+    "MinBuyout": "9g"
   },
   {
-    "Name": "shadowcore oil ",
-    "MinBuyout": "10g"
-  },
-  {
-    "Name": "potion of phantom fire ",
+    "Name": "Potion of Phantom Fire ",
     "MinBuyout": "180g"
   },
   {
-    "Name": "potion of spectral intellect ",
+    "Name": "Potion of Spectral Intellect ",
     "MinBuyout": "177g"
   },
   {
-    "Name": "potion of spectral agility ",
+    "Name": "Potion of Spectral Agility ",
     "MinBuyout": "177g"
   },
   {
-    "Name": "potion of spectral strength ",
+    "Name": "Potion of Spectral Strength  ",
     "MinBuyout": "148g"
   },
   {
-    "Name": "feast of gluttonous hedonism ",
+    "Name": "Feast of Gluttonous Hedonism ",
     "MinBuyout": "998g"
   },
   {
