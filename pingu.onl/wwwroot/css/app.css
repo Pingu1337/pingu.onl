@@ -14,6 +14,7 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #0e0d35;
     color: #d7d7d7;
+    overflow: hidden;
 }
 
 body::before {
@@ -198,325 +199,164 @@ body::before {
     .table td, table th {
         font-size: 19px;
     }
+    .table {
+        animation: rollingUp 30s infinite linear;
+    }
+    .topFrame {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .text-center {
+        transition: 5s;
+        font-size: 0px;
+    }.text-center h1{
+        transition: 5s;
+        font-size: 10px;
+    }
+
 }
 @media only screen and (min-width: 600px) {
-    body {
-        overflow: hidden;
+
+
+    .animationclass1 {
+        text-align: left;
+        animation: left 10s infinite alternate-reverse;
     }
+
+    .animationclass2 {
+        text-align: left;
+        animation: left 10s infinite alternate-reverse;
+    }
+
+    .animationclass3 {
+        text-align: left;
+        animation: left 10s infinite alternate-reverse;
+    }
+
+    .animationclass4 {
+        text-align: left;
+        animation: left 10s infinite alternate-reverse;
+        animation-delay: 1s;
+    }
+
+    .animationclass5 {
+        text-align: left;
+        animation: left 10s infinite alternate-reverse;
+        animation-delay: 1s;
+    }
+
+    .animationclass6 {
+        text-align: left;
+        animation: left 10s infinite alternate-reverse;
+        animation-delay: 1s;
+    }
+
+    .animationclass7 {
+        animation: left 10s infinite alternate-reverse;
+        animation-delay: 2s;
+    }
+
+    .animationclass8 {
+        animation: left 10s infinite alternate-reverse;
+        animation-delay: 2s;
+    }
+
+    .animationclass9 {
+        animation: left 10s infinite alternate-reverse;
+        animation-delay: 2s;
+    }
+
+    .animationclass10 {
+        animation: right 10s infinite alternate-reverse;
+    }
+
+    .animationclass11 {
+        animation: right 10s infinite alternate-reverse;
+    }
+
+    .animationclass12 {
+        animation: right 10s infinite alternate-reverse;
+    }
+
+    .animationclass13 {
+    }
+
+    .animationclass14 {
+    }
+
+    .animationclass15 {
+    }
+
+    .animationclass16 {
+    }
+
+    .animationclass17 {
+    }
+
+    .animationclass18 {
+    }
+
+    .animationclass19 {
+    }
+
+    .animationclass20 {
+    }
+
+    .animationclass21 {
+    }
+
 }
-    @keyframes rolling {
+    @keyframes left {
         0% {
-            
+            opacity: 1;
+            transform: translate(0%,300%);
         }
-        10% {
-            transform: translateY(-200%);
-        }
-
         25% {
-            transform: translate(-100%,-1000%);
+            opacity: 1;
+            transform: translate(0%,300%);
         }
-
+        40% {
+            opacity: 0;
+            transform: translate(-100%,300%);
+        }
         50% {
-            transform: translate(-100%,1000%);
+            opacity: 0;
+            transform: translate(-100%,0%);
         }
-
         75% {
-            transform: translate(0%,1000%);
-        }
-
-        100% {
+            opacity: 1;
             transform: translate(0%,0%);
         }
-
-    }
-@keyframes rolling1 {
-    0% {
-    }
-
-    20% {
-        transform: translateY(-300%);
-    }
-
-    40% {
-        transform: translate(-100%,-1000%);
-    }
-
-    50% {
-        transform: translate(-100%,1000%);
-    }
-
-    75% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
+        100% {
+            opacity: 1;
+            transform: translate(0%,0%);
+        }
 }
-@keyframes rolling2 {
+@keyframes right {
     0% {
+        opacity: 1;
+        transform: translate(0%,-900%);
     }
-
-    30% {
-        transform: translateY(-400%);
-    }
-
-    40% {
-        transform: translate(-100%,-1000%);
-    }
-
-    50% {
-        transform: translate(-100%,1000%);
-    }
-
-    75% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-
-@keyframes rolling3 {
-    0% {
-    }
-
-    35% {
-        transform: translateY(-500%);
-    }
-
-    45% {
-        transform: translate(-100%,-1000%);
-    }
-
-    50% {
-        transform: translate(-100%,1000%);
-    }
-
-    75% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-@keyframes rolling4 {
-    0% {
-    }
-
-    45% {
-        transform: translateY(-600%);
-    }
-
-    50% {
-        transform: translate(-100%,-1000%);
-    }
-
-    70% {
-        transform: translate(-100%,1000%);
-    }
-
-    75% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-@keyframes rolling5 {
-    0% {
-    }
-
-    52% {
-        transform: translateY(-700%);
-    }
-
-    60% {
-        transform: translate(-100%,-1000%);
-    }
-
-    70% {
-        transform: translate(-100%,1000%);
-    }
-
-    75% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-@keyframes rolling6 {
-    0% {
-    }
-
-    60% {
-        transform: translateY(-800%);
-    }
-
-    65% {
-        transform: translate(-100%,-1000%);
-    }
-
-    70% {
-        transform: translate(-100%,1000%);
-    }
-
-    75% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-@keyframes rolling7 {
-    0% {
-    }
-
-    65% {
-        transform: translateY(-900%);
-    }
-
-    70% {
-        transform: translate(-100%,-1000%);
-    }
-
-    80% {
-        transform: translate(-100%,1000%);
-    }
-
-    85% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-@keyframes rolling8 {
-    0% {
-    }
-
-    72% {
-        transform: translateY(-600%);
-    }
-
-    78% {
-        transform: translate(-100%,-1000%);
-    }
-
-    80% {
-        transform: translate(-100%,1000%);
-    }
-
-    85% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-@keyframes rolling9 {
-    0% {
-    }
-
-    80% {
-        transform: translateY(-1100%);
-    }
-
-    85% {
-        transform: translate(-100%,-1100%);
-    }
-
-    86% {
-        transform: translate(-100%,1000%);
-    }
-
-    90% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
-@keyframes rolling10 {
-    0% {
-        
-    }
-
     25% {
-        transform: translateX(100%);
+        opacity: 1;
+        transform: translate(0%,-900%);
     }
 
     50% {
-        transform: translate(100%,-900%);
+        opacity: 1;
+        transform: translate(0%,-900%);
     }
-
     75% {
-        transform: translate(200%,-1200%);
+        transform: translate(-100%, -900%);
+        opacity: 0;
     }
 
     100% {
-        transform: translate(200%,-500%);
-        
-    }
-
-}
-@keyframes rolling11 {
-    0% {
-    }
-
-    85% {
-        transform: translateY(-800%);
-    }
-
-    94% {
-        transform: translate(-100%,-1400%);
-    }
-
-    95% {
-        transform: translate(-100%,1000%);
-    }
-
-    97% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
+        transform: translate(-100%, -900%);
+        opacity: 0;
     }
 }
-@keyframes rolling12 {
-    0% {
-    }
 
-    70% {
-        transform: translateY(-1000%);
-    }
-
-    97% {
-        transform: translate(-100%,-1800%);
-    }
-
-    98% {
-        transform: translate(-100%,1000%);
-    }
-
-    99% {
-        transform: translate(0%,1000%);
-    }
-
-    100% {
-        transform: translate(0%,0%);
-    }
-}
 
 @keyframes fadein {
     0% {
@@ -529,74 +369,13 @@ body::before {
 
 }
 
-.animationclass1 {
-    animation: rolling 10s infinite linear;
-
-
-}
-.animationclass2 {
-    animation: rolling1 10s infinite linear;
-}
-.animationclass3 {
-    animation: rolling2 10s infinite linear;
-}
-.animationclass4 {
-    animation: rolling3 10s infinite linear;
-}
-.animationclass5 {
-    animation: rolling4 10s infinite linear;
-}
-.animationclass6 {
-    animation: rolling5 10s infinite linear;
-}
-.animationclass7 {
-    animation: rolling6 10s infinite linear;
-}
-.animationclass8 {
-    animation: rolling7 10s infinite linear;
-}
-.animationclass9 {
-    animation: rolling8 10s infinite linear;
-}
-.animationclass10 {
-    animation: rolling9 10s infinite linear;
-}
-.animationclass11 {
-    animation: rolling10 10s infinite linear; /*BUG - animationen går för fort*/
-}
-.animationclass12 {
-    animation: rolling11 10s infinite linear;
-}
-.animationclass13 {
-    animation: rolling12 10s infinite linear;
-}
-.animationclass14 {
-
-}
-.animationclass15 {
-    
- 
-}
-.animationclass16 {
-    
-
-}
-.animationclass17 {
-    
-
-}
-.animationclass18 {
-    
-
-}
-.animationclass19 {
-    
-
-}
-.animationclass20 {
-
-}
-.animationclass21 {
+@Keyframes rollingUp {
+    0% {
+        transform: translate(0%,70%);
+    }
+    100% {
+        transform: translate(0%,-100%);
+    }
 
 }
 
@@ -618,20 +397,23 @@ body::before {
 
 .table {
     overflow: auto;
-    width: 50%;
+    width: 100%;
     font-size: 40px;
     color: rgba(255, 255, 255, 1);
     border-color: rgba(255, 255, 255, 0.1);
     text-indent: initial;
     
 }
+.table td {
+    width: 50%;
+}
 
     .table td, table th {
+        text-align: left;
         font-family: 'Minecart LCD', sans-serif;
         padding: .55rem;
-        border-top: 1px solid rgba(255, 255, 255, 0) !important; /*TODO här ligger linjerna som nu är dolda*/
+        border-top: 1px solid rgba(255, 255, 255, .1) !important; /*TODO här ligger linjerna som nu är dolda*/
         vertical-align: top;
-        
     }
     .table thead th {
         font-size: 21px;
