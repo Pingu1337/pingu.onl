@@ -1,0 +1,132 @@
+﻿@page "/wow/simc"
+
+@using CurrieTechnologies.Razor.Clipboard
+@using Blazorise
+@using Blazorise.Snackbar
+@inject ClipboardService clipboard
+
+
+<div class="main">
+    <div class="topblock">
+        <h1 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">SimcHelper</h1>
+
+        <p style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">This tool is used for emptying your sockets before using your /simc code on raidbots.</p>
+
+        <h1 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">SimC Input</h1>
+    </div>
+    <div class="Text1">
+        <MemoEdit Rows="8" Text="@Input" TextChanged="@TextChanged"></MemoEdit>
+    </div>
+
+    <div class="input">
+        <Check TValue="bool" style="text-shadow:4px 3px 0 #0D0D0D" Checked="@NoSocket" CheckedChanged="NoSocketChanged"><p class="text-color">Empty Sockets</p></Check>
+
+
+        <div class="submit-button">
+            <Button Color="Color.Dark" @onclick="simc">Submit</Button>
+        </div>
+    </div>
+    <h2 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">Output:</h2>
+
+    <div class="Text2">
+        <MemoEdit Rows="8" class="Text2" Text="@x"></MemoEdit>
+    </div>
+    <div class="output">
+        <div class="copy-button">
+            <!--<input @bind="textValue" />-->
+            <!--<button @onclick="(async e => textValue = await clipboard.ReadTextAsync())">Paste From Clipboard</button>-->
+            <Button Color="Color.Dark" Clicked="copied">Copy To Clipboard</Button>
+        </div>
+    </div>
+</div>
+
+<Snackbar @ref="snackbar" Color="SnackbarColor.Dark">
+    <SnackbarBody Padding="Padding.IsAuto">
+        <text  style="margin-left: auto; margin-right: auto; font-size:initial; text-shadow: 0px 0px 0 #0D0D0D;">Simc code copied to clipboard.</text>
+    </SnackbarBody>
+
+</Snackbar>
+
+
+
+@if (NoSocket)
+{
+
+
+
+    /*Haste Gem*/             /*Mastery Gem*/            /*Vers Gem*/              /*Crit Gem*/
+    var replacement = a.Replace(",gem_id=173128", "").Replace(",gem_id=173130", "").Replace(",gem_id=173129", "".Replace(",gem_id=173127", ""));
+    var replacement2 = a.Replace(",gem_id=173130", "");
+    a = $"{replacement}";
+
+
+
+}
+else
+{
+    a = Input;
+    NoSocket = false;
+
+}
+
+
+
+@code{
+    string textValue = string.Empty;
+    string Input = "";
+    string x;
+    string a; //sourceFile
+    string b;
+    bool NoSocket;
+    Snackbar snackbar;
+    
+
+
+    public void copied()
+    {
+        clipboard.WriteTextAsync(textValue);
+        snackbar.Show();
+    }
+
+
+
+
+
+
+    public void simc()
+    {
+        //lineEdit();
+        //a = destinationFile;
+        x = $"{a}";
+        textValue = x;
+
+
+    }
+
+    void TextChanged(string value)
+    {
+        Input = value;
+        a = Input;
+        NoSocket = true;
+
+    }
+
+    void NoSocketChanged(bool value)
+    {
+
+        NoSocket = value;
+
+    }
+
+    void copy()
+    {
+
+    }
+
+
+
+}
+
+
+
+

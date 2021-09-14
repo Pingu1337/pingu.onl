@@ -1,0 +1,130 @@
+﻿
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #262626;
+}
+
+body {
+    width: 100%;
+    /* background-color:#261c27;*/
+}
+
+.text-color {
+    color: white;
+}
+
+a, .btn-link {
+    /*  color: #0366d6;*/
+}
+
+.btn-primary {
+    /*  color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;*/
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+
+
+/*.b-layout-header {
+    width:100%;
+    background: #1e121f;
+    height:100px;
+}*/
+
+/*.sider {
+    
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}*/
+.main {
+    width: 100%;
+}
+
+
+
+.Text1 {
+    max-width: 600px;
+    transform: scale(1);
+}
+
+.Text2 {
+    max-width: 600px;
+}
+
+.input {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+}
+
+.label {
+    /*color:white;*/
+}
+
+.submit-button {
+    float: right;
+    margin-left: auto;
+}
+
+.output {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+}
+
+.copy-button {
+    float: right;
+    margin-left: auto;
+}
+
+.b-bar-vertical-inline.b-bar-dark .b-bar-link.active, .b-bar-vertical-popout.b-bar-dark .b-bar-link.active, .b-bar-vertical-small.b-bar-dark .b-bar-link.active {
+    color: var(--b-bar-item-dark-active-color, #fff);
+    background: var(--b-bar-item-dark-active-background, #737373);
+}
+
+.b-bar-vertical-inline.b-bar-dark .b-bar-dropdown-menu, .b-bar-vertical-popout.b-bar-dark .b-bar-dropdown-menu, .b-bar-vertical-small.b-bar-dark .b-bar-dropdown-menu {
+    background: var(--b-bar-dropdown-dark-background, #151515);
+}
+
+.topblock {
+    margin-top: 20px;
+}
