@@ -3,6 +3,7 @@
 @using CurrieTechnologies.Razor.Clipboard
 @using Blazorise
 @using Blazorise.Snackbar
+@using System.IO
 @inject ClipboardService clipboard
 
 
@@ -15,7 +16,7 @@
         <h1 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">SimC Input</h1>
     </div>
     <div class="Text1">
-        <MemoEdit Rows="8" Text="@Input" TextChanged="@TextChanged"></MemoEdit>
+        <MemoEdit Rows="rows" Text="@Input" TextChanged="@TextChanged"></MemoEdit>
     </div>
 
     <div class="input">
@@ -29,7 +30,7 @@
     <h2 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">Output:</h2>
 
     <div class="Text2">
-        <MemoEdit Rows="8" class="Text2" Text="@x"></MemoEdit>
+        <MemoEdit Rows="rows2" Text="@x"></MemoEdit>
     </div>
     <div class="output">
         <div class="copy-button">
@@ -72,6 +73,8 @@ else
 
 
 @code{
+    int rows;
+    int rows2;
     string textValue = string.Empty;
     string Input = "";
     string x;
@@ -79,7 +82,7 @@ else
     string b;
     bool NoSocket;
     Snackbar snackbar;
-    
+
 
 
     public void copied()
@@ -99,7 +102,7 @@ else
         //a = destinationFile;
         x = $"{a}";
         textValue = x;
-
+        rows2 = rows;
 
     }
 
@@ -108,6 +111,17 @@ else
         Input = value;
         a = Input;
         NoSocket = true;
+        var file = new StringReader(a).ReadToEnd();
+        var lines = file.Split(new char[] { '\n' });
+        var count = lines.Length;
+        if (count > 6)
+        {
+            rows = 6;
+        }
+        else
+        {
+            rows = count;
+        }
 
     }
 

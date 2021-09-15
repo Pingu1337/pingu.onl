@@ -57,8 +57,9 @@ body::before {
     align-items: center;
     flex-wrap: wrap;
     z-index: 1;
-    max-height: 99%;
     top: -50px;
+    max-width: 100%;
+    
 }
 
     .glasscontainer .glasscard {
@@ -103,7 +104,6 @@ body::before {
             transform: translateY(-50px);
             opacity: 1;
             transition: 0.5s;
-            max-height: 650px;
         }
 
         .glasscontainer .glasscard:hover .glasscontent {
@@ -168,9 +168,7 @@ body::before {
 }
 .glassscreen {
     position: absolute;
-    width: 96.1%;
     width: 100%;
-    height: 92%;
     height: 100%;
     border-radius: 15px;
     background: rgba(255, 255, 255, .05);
@@ -194,30 +192,55 @@ body::before {
 .stocknochange {
     color: rgba(255, 255, 0, 1);
 }
-
-@media only screen and (max-width: 600px) {
-    .table td, table th {
-        font-size: 19px;
+@media only screen and (max-width:800px ) {
+    .glasscontainer .glasscard {
+        height: 700px;
     }
     .table {
-        animation: rollingUp 30s infinite linear;
+        animation: rollingUp 20s infinite linear;
+    }
+    .text-center {
+        transition: 1s;
+        font-size: 0px;
+        padding-bottom: 40px;
     }
     .topFrame {
         opacity: 0;
         visibility: hidden;
     }
-    .text-center {
-        transition: 5s;
-        font-size: 0px;
-    }.text-center h1{
-        transition: 5s;
-        font-size: 10px;
-    }
 
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
 
+    .glasscontainer .glasscard {
+        height: 500px;
+    }
 
+    .table td, table th {
+        font-size: 19px;
+    }
+    .table {
+        animation: rollingUp 20s infinite linear;
+    }
+   .topFrame {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .text-center {
+        font-size: 0px;
+        padding-bottom: 40px;
+    }
+/*    .text-center h1{
+        transition: 5s;
+        font-size: 10px;
+    }*/
+
+}
+@media only screen and (min-width: 800px) {
+
+    .glasscontainer .glasscard{
+        height: 690px;
+    }
     .animationclass1 {
         text-align: left;
         animation: left 10s infinite alternate-reverse;
@@ -389,13 +412,14 @@ body::before {
     .topFrame h1 {
         font-size: 21px;
         padding-left: 40px;
-        padding-right: 460px;
+        padding-right: 610px;
         opacity: 1;
         animation-duration: 2s;
         animation-name: fadein;
     }
 
 .table {
+    margin-top: -20px;
     overflow: auto;
     width: 100%;
     font-size: 40px;
@@ -436,7 +460,6 @@ a, .btn-link {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
-    transform: translate(150px,-50px);
     height: 60px;
 }
     .btn-primary:hover {
