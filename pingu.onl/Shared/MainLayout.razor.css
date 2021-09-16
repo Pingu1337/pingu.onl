@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     z-index: 1;
+    transition: margin-left 0.3s;
 }
 
 
@@ -12,12 +13,38 @@
     /*background-color: #0e0d35;*/
 }
 
+.navtoggler {
+    text-align: center;
+    background-color: rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-left: none;
+    color: #0e0d35;
+    font-size: 25px;
+    padding-top: 10px;
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 56px;
+}
 
+
+.collapseside {
+    transform: translateX(-250px);
+    width: 0;
+    border-right: rgba(255, 255, 255, 0);
+    transition: 0.3s;
+}
+.showside {
+    transform: translateX(0px);
+    width: 250px;
+    border-right: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
 
 .sidebar {
     background-color: rgba(255,255,255,0.1);
     border-bottom: 1px solid rgba(255,255,255,0.15);
-    border-right: 1px solid rgba(255,255,255,0.15);
+    border-right: 0px solid rgba(255,255,255,0.15);
     z-index: +1;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }

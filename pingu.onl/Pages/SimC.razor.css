@@ -75,6 +75,23 @@ a, .btn-link {
 }*/
 .main {
     width: 100%;
+    padding-bottom: 50px;
+}
+.simcGlasscard {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 11px;
+    display: flex;
+    max-width: 566px;
+    height: auto;
+    justify-content: center;
+    
+    text-align: center;
+    flex-direction: column;
+    padding: 0px 20px 10px;
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, .1);
 }
 
 
@@ -89,7 +106,7 @@ a, .btn-link {
 }
 
 .input {
-    margin-top: 10px;
+    margin-top: 0px;
     display: flex;
     flex-direction: row;
     max-width: 600px;
@@ -100,18 +117,20 @@ a, .btn-link {
 }
 
 .submit-button {
+    margin-top: 10px;
     float: right;
     margin-left: auto;
 }
 
 .output {
-    margin-top: 10px;
+    margin-top: 0px;
     display: flex;
     flex-direction: row;
     max-width: 600px;
 }
 
 .copy-button {
+    margin-top: 10px;
     float: right;
     margin-left: auto;
 }
@@ -126,9 +145,18 @@ a, .btn-link {
 }
 
 .topblock {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
+    .simcGlasscard {
+        padding-bottom: 30px;
+    }
+    .submit-button {
+        margin-top: 20px;
+    }
+    .copy-button {
+        margin-top: 20px;
+    }
 }
     

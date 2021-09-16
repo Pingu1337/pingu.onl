@@ -8,35 +8,38 @@
 
 
 <div class="main">
+    <div class="simcGlasscard">
     <div class="topblock">
-        <h1 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">SimcHelper</h1>
+        <h1 style="text-shadow: 4px 3px 0 #0D0D0D" class="text-color">SimcHelper</h1>
 
-        <p style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">This tool is used for emptying your sockets before using your /simc code on raidbots.</p>
+        <p style="text-shadow: 4px 3px 0 #0D0D0D" class="text-color">This tool is used for emptying your sockets before using your /simc code on raidbots.</p>
 
-        <h1 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">SimC Input</h1>
+        <h1 style="text-shadow: 4px 3px 0 #0D0D0D" class="text-color">SimC Input:</h1>
     </div>
     <div class="Text1">
         <MemoEdit Rows="rows" Text="@Input" TextChanged="@TextChanged"></MemoEdit>
     </div>
 
     <div class="input">
-        <Check TValue="bool" style="text-shadow:4px 3px 0 #0D0D0D" Checked="@NoSocket" CheckedChanged="NoSocketChanged"><p class="text-color">Empty Sockets</p></Check>
+        <Check TValue="bool" style="text-shadow: 4px 3px 0 #0D0D0D" Checked="@NoSocket" CheckedChanged="NoSocketChanged">
+            <p class="text-color">Empty Sockets</p></Check>
 
 
         <div class="submit-button">
             <Button Color="Color.Dark" @onclick="simc">Submit</Button>
         </div>
     </div>
-    <h2 style="text-shadow:4px 3px 0 #0D0D0D" class="text-color">Output:</h2>
+    <h2 style="text-shadow: 4px 3px 0 #0D0D0D" class="text-color">Output:</h2>
 
     <div class="Text2">
         <MemoEdit Rows="rows2" Text="@x"></MemoEdit>
     </div>
-    <div class="output">
-        <div class="copy-button">
-            <!--<input @bind="textValue" />-->
-            <!--<button @onclick="(async e => textValue = await clipboard.ReadTextAsync())">Paste From Clipboard</button>-->
-            <Button Color="Color.Dark" Clicked="copied">Copy To Clipboard</Button>
+        <div class="output">
+            <div class="copy-button">
+                <!--<input @bind="textValue" />-->
+                <!--<button @onclick="(async e => textValue = await clipboard.ReadTextAsync())">Paste From Clipboard</button>-->
+                <Button Color="Color.Dark" Clicked="copied">Copy To Clipboard</Button>
+            </div>
         </div>
     </div>
 </div>

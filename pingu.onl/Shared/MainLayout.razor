@@ -1,17 +1,38 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
+
+<div class="page">
+ 
+    <div class="@sidebarCssClass">
+        <div class="sidebar">
+            <NavMenu/>
+        </div>
+    </div>
+    
+    <div class="navtoggler" @onclick="togglesidebar">
+        <i class="fa fa-bars"></i>
+    </div>
+    
     <div class="main">
         <div class="top-row px-4">
             <a href="about" class="ml-md-auto">About</a>
         </div>
-
         <div class="content px-4">
             @Body
         </div>
     </div>
+
 </div>
+
+@code{
+    bool collapseside = true;
+    private string sidebarCssClass => collapseside ? "collapseside" : "showside";
+    
+
+    private void togglesidebar()
+    {
+        collapseside = !collapseside;
+    }
+
+}
